@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
 
 :root {
-    --primary-color: #FD951F;
+    --primary-color:orangered;
     --secondary-color: #1FD4FD
 }
 
@@ -28,6 +28,53 @@ body {
     width: 90%;
     max-width: 980px;
     margin: 0 auto;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+
+    padding: 12px 32px;
+    border-radius: 4px;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(
+        to right,
+        var(--primary-color),
+        #fd951f
+    );
+  }
+  
+.button::before {
+    border-radius: 4px;
+
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+        to right,
+        #fd951f,
+        var(--primary-color)
+    );
+    z-index: -1;
+    transition: opacity 0.3s linear;
+    opacity: 0;
+}
+  
+.button:hover::before {
+    opacity: 1;
 }
 
 header,footer {
@@ -86,4 +133,72 @@ nav.primary ul a {
 
 nav.primary ul a:hover {
     color: var(--primary-color);
+}
+
+/*** FORM ***/
+section.form {
+    width: 90%;
+    max-width: 700px;
+
+    padding: 32px 24px;
+    margin: 32px auto;
+
+    background-color: white;
+    box-shadow: 2px 2px 4px -4px rgba(60, 60, 60, .9);
+    border: 1px solid #EFEFEF;
+
+    border-radius: 4px;
+}
+
+section.form h3 {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+    line-height:32px;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+}
+
+.form .item {
+    margin-bottom: 16px;
+}
+
+.form .item > div:nth-child(1) {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: #777;
+
+    margin-bottom: 8px;
+}
+
+.form .item input[type="text"],
+.form .item input[type="number"],
+.form .item textarea,
+.form .item select {
+    width: 100%;
+    padding: 8px 16px;
+    box-shadow: 2px 2px 4px -4px rgba(60, 60, 60 , 0.9);
+    border-radius: 4px;
+    border: 1px solid #EFEFEF;
+    font-size: 16px;
+}
+
+.form .item select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' fill='orangered' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right .7em top 50%;
+}
+
+.form .item textarea {
+    min-height: 120px;  
+}
+
+form .fields {
+    margin-bottom: 64px;
 }
