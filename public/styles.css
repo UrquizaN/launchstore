@@ -30,13 +30,19 @@ body {
     margin: 0 auto;
 }
 
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .button {
-    display: block;
     width: 100%;
     max-width: 250px;
+    justify-self: center;
 
     padding: 12px 32px;
     border-radius: 4px;
+    margin-top: 24px;
 
     text-transform: uppercase;
     font-weight: bold;
@@ -53,7 +59,15 @@ body {
         #fd951f
     );
     filter: brightness(125%);
-  }
+}
+
+.button.delete {
+    background: linear-gradient(
+        to right,
+        #ff200c,
+        rgb(255, 0, 85)
+    );
+}
   
 .button::before {
     border-radius: 4px;
@@ -72,6 +86,14 @@ body {
     z-index: -1;
     transition: opacity 0.3s linear;
     opacity: 0;
+}
+
+.button.delete::before{
+    background: linear-gradient(
+        to right,
+        rgb(255, 0, 85),
+        #ff200c
+    );
 }
   
 .button:hover::before {
@@ -178,7 +200,8 @@ section.form h3 {
 .form .item input[type="text"],
 .form .item input[type="number"],
 .form .item textarea,
-.form .item select {
+.form .item select,
+.form .item span {
     width: 100%;
     padding: 8px 16px;
     box-shadow: 2px 2px 4px -4px rgba(60, 60, 60 , 0.9);
@@ -205,4 +228,14 @@ section.form h3 {
 
 form .fields {
     margin-bottom: 64px;
+}
+
+.form .item span {
+    margin-right: 16px;
+    padding: 2px 8px;
+    border-radius: 56px;
+}
+
+.form .item input[type="radio"] {
+    margin-right: 4px;
 }
