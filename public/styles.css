@@ -239,3 +239,45 @@ form .fields {
 .form .item input[type="radio"] {
     margin-right: 4px;
 }
+
+/*** PHOTOS UPLOAD ***/
+
+.form .item #photos-upload {
+    position: relative;
+    width: 200px;
+    display: block;
+    overflow: hidden;
+} 
+
+.form .item #photos-upload input::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+.form .item #photos-input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0
+}
+
+.form .item #photos-upload p {
+    background: linear-gradient(
+        to right,
+        #fd951f,
+        var(--primary-color)
+    );
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+
+    padding: 8px 8px;
+    border-radius: 4px;
+}
+
+
